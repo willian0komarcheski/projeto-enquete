@@ -7,13 +7,13 @@ const port = 3000;
 app.use(express.json());
 
 // Importa o controller
-const userController = require('./Controllers/EnqueteController');
+const EnqueteController = require('C:/Users/richard/Desktop/projeto-enquete/backend-enquete/src/Controllers/EnqueteController');
 
 // Rota para criar um usuário
-app.post('/users', async (req, res) => userController.createEnquete(req, res));
+app.post('/enquete', async (req, res) => EnqueteController.createEnquete(req, res));
 
 // Rota para buscar um usuário por email
-app.get('/users/:email', async (req, res) => userController.getUserByEmail(req, res));
+app.get('/enquete/:id', async (req, res) => EnqueteController.getUserById(req, res));
 
 // Inicie o servidor
 app.listen(port, () => {
