@@ -8,7 +8,7 @@ const port = 3000;
 app.use(bodyParser.json());
 
 // Importa o controller
-const EnqueteController = require('C:/Users/richard/Desktop/projeto-enquete/backend-enquete/src/Controllers/EnqueteController');
+const EnqueteController = require('./src/Controllers/EnqueteController');
 
 // Rota para criar um usuário
 app.post('/enquete', async (req, res) => EnqueteController.createEnquete(req, res));

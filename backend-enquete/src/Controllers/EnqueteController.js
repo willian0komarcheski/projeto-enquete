@@ -1,17 +1,17 @@
-const EnqueteService = require('C:/Users/richard/Desktop/projeto-enquete/backend-enquete/src/Services/EnqueteService');
+const EnqueteService = require('../Services/EnqueteService');
 class EnqueteController {
   async createEnquete(req, res) {
 
       try {
-        const { titulo, inicio, fim } = req.body;
-        console.log("Titulo recebido:", titulo);
-        console.log("Inicio recebido:", inicio);
-        console.log("Fim recebido:", fim);
-        const newEnquete = await EnqueteService.createEnquete(titulo, inicio, fim);
-        console.log("Titulo recebido:", titulo);
-        console.log("Inicio recebido:", inicio);
-        console.log("Fim recebido:", fim);
-        res.status(201).json(newEnquete);
+        const { Titulo, Inicio, Fim } = req.body;
+        console.log("Titulo recebido:", Titulo);
+        console.log("Inicio recebido:", Inicio);
+        console.log("Fim recebido:", Fim);
+        const Enquete = await EnqueteService.createEnquete(Titulo, Inicio, Fim);
+        console.log("Titulo recebido:", Titulo);
+        console.log("Inicio recebido:", Inicio);
+        console.log("Fim recebido:", Fim);
+        res.status(201).json(Enquete);
 
       } catch (error) {
         console.error('Erro ao criar usuário:', error);

@@ -3,8 +3,8 @@ const { where } = require('sequelize');
 const Enquete = require('../Models/Enquete');
 
 class EnqueteService {
-  async createEnquete(titulo, inicio, fim) {
-    return Enquete.create({ titulo, inicio, fim });
+  async createEnquete(Titulo, Inicio, Fim) {
+    return Enquete.create({ Titulo, Inicio, Fim });
   }
 
   async findAllEnquete() {
