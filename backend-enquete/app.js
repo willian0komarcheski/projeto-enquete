@@ -1,10 +1,11 @@
 // app.js
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
 // Middleware para permitir o uso de JSON no corpo das requisições
-app.use(express.json());
+app.use(bodyParser.json());
 
 // Importa o controller
 const EnqueteController = require('C:/Users/richard/Desktop/projeto-enquete/backend-enquete/src/Controllers/EnqueteController');
@@ -13,7 +14,9 @@ const EnqueteController = require('C:/Users/richard/Desktop/projeto-enquete/back
 app.post('/enquete', async (req, res) => EnqueteController.createEnquete(req, res));
 
 // Rota para buscar um usuário por email
-app.get('/enquete/:id', async (req, res) => EnqueteController.getUserById(req, res));
+app.get('/enquete/:id', async (req, res) => EnqueteController.getEnqueteById(req, res));
+
+app.get('/enquete', async (req, res) => EnqueteController.findAll(req, res));
 
 // Inicie o servidor
 app.listen(port, () => {
