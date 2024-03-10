@@ -7,18 +7,18 @@ class EnqueteService {
     return Enquete.create({ Titulo, Inicio, Fim });
   }
 
-  async findAllEnquete() {
+  async findAll() {
     return Enquete.findAll();
   }
-  async getEnqueteById(id) {
+  async getElementById(id) {
     return Enquete.findOne({ where: { id } });
   }
 
-  async updateEnquete(id, Enquete) {
-    return Enquete.update(Enquete, {where: {id}});
+  async update(id, Titulo, Inicio, Fim) {
+    return Enquete.update({ Titulo, Inicio, Fim }, {where: {id}});
   }
 
-  async deleteEnquete(id) {
+  async destroy(id) {
     return Enquete.destroy({where: {id}})
   }
 }
